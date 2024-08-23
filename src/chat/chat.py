@@ -76,8 +76,8 @@ def cchat(chatroom, username):
                     return
 
             elif data['sender'] != username:
-                print()
-                print(f"{data['sender']}: {data['message']}")
+                # print()
+                print(f"[{data['sender']}]: {data['message']}")
                 # print(f"{username}: ", end="")
 
     except KeyboardInterrupt:
