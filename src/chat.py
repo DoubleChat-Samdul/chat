@@ -28,7 +28,7 @@ def pchat(chatroom, username):
         while True:
             message = ""
             while message == "":
-                print(f"{username}: ", end="")
+                # print(f"{username}: ", end="")
                 message = input()
         
             if message == 'exit':
@@ -69,7 +69,7 @@ def cchat(chatroom, username):
                     print()
                     print(f"User {data['sender']} has exited the chat.")
                     print("Type in 'exit' to also finish the chat.")
-                    print(f"{username}: ", end="")
+                    # print(f"{username}: ", end="")
 
                 # I'm exiting!! finish thread
                 else:
@@ -78,7 +78,7 @@ def cchat(chatroom, username):
             elif data['sender'] != username:
                 print()
                 print(f"{data['sender']}: {data['message']}")
-                print(f"{username}: ", end="")
+                # print(f"{username}: ", end="")
 
     except KeyboardInterrupt:
         print("Exiting chat...")
