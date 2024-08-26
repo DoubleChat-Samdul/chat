@@ -1,15 +1,11 @@
 # src/chat3.py
 
-# src/chat.py
 from kafka import KafkaProducer, KafkaConsumer
 from json import loads, dumps
 import threading
 import curses
 import json
 from datetime import datetime
-
-# JSON 파일에 저장하기 위한 경로
-output_file = '/home/kyuseok00/teamproj/chat/data/messages.json'
 
 def resize_win(stdscr, lowerwin_height=3):
     height, width = stdscr.getmaxyx()
