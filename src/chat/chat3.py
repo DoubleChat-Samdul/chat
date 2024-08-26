@@ -68,11 +68,6 @@ def pchat(chatroom, username, lowerwin, upperwin, lock):
             sender.send(chatroom, value=data)
             sender.flush()
 
-            # 메시지를 보낼 때마다 JSON 파일에 저장
-            with open(output_file, 'a') as f:
-                json.dump(data, f)
-                f.write('\n')
-
             if end:
                 return
 
