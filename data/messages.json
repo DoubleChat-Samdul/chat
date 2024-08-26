@@ -1,0 +1,15 @@
+{"sender": "[INFO]", "message": "User [user1] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T11:25:59.859694"}
+{"sender": "[INFO]", "message": "User [user2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T11:26:27.099950"}
+{"sender": "user2", "message": "hi", "end": false, "timestamp": "2024-08-26T11:26:28.670735"}
+{"sender": "user2", "message": "hello", "end": false, "timestamp": "2024-08-26T11:26:31.754530"}
+{"sender": "user1", "message": "my name is kyuseok", "end": false, "timestamp": "2024-08-26T11:26:36.306490"}
+{"sender": "user1", "message": "what's your name?", "end": false, "timestamp": "2024-08-26T11:26:41.541269"}
+{"sender": "user2", "message": "i'm alex", "end": false, "timestamp": "2024-08-26T11:26:45.711074"}
+{"sender": "user2", "message": "how old are you", "end": false, "timestamp": "2024-08-26T11:26:50.074787"}
+{"sender": "user1", "message": "i'm 24", "end": false, "timestamp": "2024-08-26T11:26:53.451238"}
+{"sender": "user1", "message": "you?", "end": false, "timestamp": "2024-08-26T11:26:54.775440"}
+{"sender": "user2", "message": "i'm 25", "end": false, "timestamp": "2024-08-26T11:26:57.924496"}
+{"sender": "user2", "message": "okay got it", "end": false, "timestamp": "2024-08-26T11:27:02.904150"}
+{"sender": "user2", "message": "bye", "end": false, "timestamp": "2024-08-26T11:27:03.836618"}
+{"sender": "user2", "message": "\nUser [user2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T11:27:05.278080"}
+{"sender": "user1", "message": "\nUser [user1] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T11:27:07.839530"}
