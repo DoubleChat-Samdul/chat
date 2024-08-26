@@ -18,7 +18,7 @@ def read_offset():
             return int(f.read().strip())
     return None
 
-def fetch_kafka_data():
+def fetch_data():
     output_path = '/home/kyuseok00/teamproj/chat/data/messages_audit'
     
     saved_offset = read_offset()
@@ -60,6 +60,6 @@ def fetch_kafka_data():
 
     consumer.close()
 
-fetch_kafka_data()
+fetch_data()
 
 spark.stop()
