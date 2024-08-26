@@ -19,12 +19,11 @@ def read_offset():
     return None
 
 def fetch_kafka_data():
-    parquet_output_path = '/home/kyuseok00/teamproj/chat/data/messages_audit.parquet'
+    output_path = '/home/kyuseok00/teamproj/chat/data/messages_audit'
     
     saved_offset = read_offset()
 
     consumer = KafkaConsumer(
-        # 'team2',
         bootstrap_servers=['ec2-43-203-210-250.ap-northeast-2.compute.amazonaws.com:9092'],
         value_deserializer=lambda x: loads(x.decode('utf-8')),
         group_id="chat_team2",
@@ -57,7 +56,7 @@ def fetch_kafka_data():
 
     if message_list:
         df = spark.createDataFrame(message_list, schema)
-        df.write.mode("append").parquet(parquet_output_path)
+        df.write.mode("append").parquet(output_path)
 
     consumer.close()
 
