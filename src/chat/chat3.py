@@ -1,9 +1,15 @@
+# src/chat3.py
+
 # src/chat.py
 from kafka import KafkaProducer, KafkaConsumer
 from json import loads, dumps
 import threading
 import curses
+import json
+from datetime import datetime
 
+# JSON 파일에 저장하기 위한 경로
+output_file = '/home/kyuseok00/teamproj/chat/data/messages.json'
 
 def resize_win(stdscr, lowerwin_height=3):
     height, width = stdscr.getmaxyx()
@@ -18,24 +24,29 @@ def resize_win(stdscr, lowerwin_height=3):
     # enable scrolling
     upperwin.scrollok(True)
     lowerwin.scrollok(True)
-    
+
     return lowerwin, upperwin
 
 def create_data(username, message, end):
-    return {'sender': username, 'message': message, 'end': end}
+    return {'sender': username, 'message': message, 'end': end, 'timestamp': datetime.now().isoformat()}
 
+# SENDER
 def pchat(chatroom, username, lowerwin, upperwin, lock):
     sender = KafkaProducer(
-        bootstrap_servers = ['localhost:9092'],
-        # bootstrap_servers = ['ec2-43-203-182-252.ap-northeast-2.compute.amazonaws.com:9092'],
-        value_serializer = lambda x: dumps(x).encode('utf-8'),
+        bootstrap_servers=['localhost:9092'],
+        value_serializer=lambda x: dumps(x).encode('utf-8'),
     )
 
     try:
         data = create_data("[INFO]", f"User [{username}] has entered the chat!\n", False)
         end = False
-        sender.send(chatroom, data)
-        sender.flush()        
+        sender.send(chatroom, value=data)
+        sender.flush()
+
+        # 메시지를 보낼 때마다 JSON 파일에 저장
+        with open(output_file, 'a') as f:
+            json.dump(data, f)
+            f.write('\n')
 
         while True:
             with lock:
@@ -50,30 +61,32 @@ def pchat(chatroom, username, lowerwin, upperwin, lock):
 
             if message == 'exit':
                 message = f"\nUser [{username}] has exited the chatroom."
-                user = '[INFO]'
                 end = True
 
-            data = {'sender': username, 'message': message, 'end': end}       
+            data = create_data(username, message, end)
             sender.send(chatroom, value=data)
             sender.flush()
 
+            # 메시지를 보낼 때마다 JSON 파일에 저장
+            with open(output_file, 'a') as f:
+                json.dump(data, f)
+                f.write('\n')
+
             if end:
-                return    
+                return
 
     except KeyboardInterrupt:
         upperwin.addstr("[INFO] Encountered keyboard interrupt. Finishing chat...")
         upperwin.refresh()
         return
 
-    
 # RECEIVER
 def cchat(chatroom, username, lowerwin, upperwin, lock):
     receiver = KafkaConsumer(
         chatroom,
-        bootstrap_servers = ['localhost:9092'],
-        # bootstrap_servers = ['ec2-43-203-182-252.ap-northeast-2.compute.amazonaws.com:9092'],
-        enable_auto_commit = True,
-        value_deserializer = lambda x: loads(x.decode('utf-8'))
+        bootstrap_servers=['localhost:9092'],
+        enable_auto_commit=True,
+        value_deserializer=lambda x: loads(x.decode('utf-8'))
     )
 
     try:
@@ -99,19 +112,19 @@ def cchat(chatroom, username, lowerwin, upperwin, lock):
                     upperwin.addstr(f"{data['sender']}: {data['message']}\n")
                     upperwin.refresh()
 
-            if upperwin.getyx()[0] >= upperwin.getmaxyx()[0] -1:
+            if upperwin.getyx()[0] >= upperwin.getmaxyx()[0] - 1:
                 with lock:
                     upperwin.scroll(1)
                     upperwin.refresh()
 
     except KeyboardInterrupt:
-        upperwin.refresh()("Exiting chat...")
+        upperwin.addstr("\n[INFO] Exiting chat...")
+        upperwin.refresh()
         return
-
 
 lock = threading.Lock()
 
-stdscr = curses.initscr() 
+stdscr = curses.initscr()
 stdscr.keypad(True)
 lowerwin, upperwin = resize_win(stdscr, lowerwin_height=3)
 stdscr.clear()
@@ -129,8 +142,8 @@ with lock:
     lowerwin.clear()
     lowerwin.refresh()
 
-thread_1 = threading.Thread(target = pchat, args = (chatroom, username, lowerwin, upperwin, lock))
-thread_2 = threading.Thread(target = cchat, args = (chatroom, username, lowerwin, upperwin, lock))
+thread_1 = threading.Thread(target=pchat, args=(chatroom, username, lowerwin, upperwin, lock))
+thread_2 = threading.Thread(target=cchat, args=(chatroom, username, lowerwin, upperwin, lock))
 
 thread_1.start()
 thread_2.start()
