@@ -13,3 +13,11 @@
 {"sender": "user2", "message": "bye", "end": false, "timestamp": "2024-08-26T11:27:03.836618"}
 {"sender": "user2", "message": "\nUser [user2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T11:27:05.278080"}
 {"sender": "user1", "message": "\nUser [user1] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T11:27:07.839530"}
+{"sender": "[INFO]", "message": "User [user1] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T12:46:52.369395"}
+{"sender": "[INFO]", "message": "User [user2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T12:46:53.396404"}
+{"sender": "user2", "message": "hello", "end": false, "timestamp": "2024-08-26T12:46:57.812185"}
+{"sender": "user1", "message": "hi", "end": false, "timestamp": "2024-08-26T12:47:01.389729"}
+{"sender": "user1", "message": "okay", "end": false, "timestamp": "2024-08-26T12:47:04.564579"}
+{"sender": "user1", "message": "nice to meet you", "end": false, "timestamp": "2024-08-26T12:47:12.106082"}
+{"sender": "user1", "message": "\nUser [user1] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T12:47:14.662250"}
+{"sender": "user2", "message": "\nUser [user2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T12:47:19.135859"}
