@@ -21,3 +21,25 @@
 {"sender": "user1", "message": "nice to meet you", "end": false, "timestamp": "2024-08-26T12:47:12.106082"}
 {"sender": "user1", "message": "\nUser [user1] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T12:47:14.662250"}
 {"sender": "user2", "message": "\nUser [user2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T12:47:19.135859"}
+{"sender": "[INFO]", "message": "User [user3] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:10:48.757330"}
+{"sender": "[INFO]", "message": "User [user4] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:11:34.363838"}
+{"sender": "user4", "message": "\nUser [user4] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T15:11:36.770801"}
+{"sender": "[INFO]", "message": "User [user2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:11:47.364947"}
+{"sender": "user2", "message": "hi", "end": false, "timestamp": "2024-08-26T15:11:50.013241"}
+{"sender": "user2", "message": "long time no see", "end": false, "timestamp": "2024-08-26T15:11:55.357145"}
+{"sender": "user2", "message": "do you speak korean?", "end": false, "timestamp": "2024-08-26T15:12:01.992864"}
+{"sender": "user3", "message": "oh", "end": false, "timestamp": "2024-08-26T15:12:05.310848"}
+{"sender": "user3", "message": "hello", "end": false, "timestamp": "2024-08-26T15:12:07.734584"}
+{"sender": "user3", "message": "i just speak korean", "end": false, "timestamp": "2024-08-26T15:12:15.023592"}
+{"sender": "user3", "message": "can you speak any other languages?", "end": false, "timestamp": "2024-08-26T15:12:25.038219"}
+{"sender": "user2", "message": "sorry, i just speak english", "end": false, "timestamp": "2024-08-26T15:12:33.664237"}
+{"sender": "user2", "message": "what's your plan for this weekend", "end": false, "timestamp": "2024-08-26T15:12:43.030738"}
+{"sender": "user3", "message": "i'm planning to visit busan, one of my favorite places in korea", "end": false, "timestamp": "2024-08-26T15:13:03.192683"}
+{"sender": "user2", "message": "oh really?", "end": false, "timestamp": "2024-08-26T15:13:07.682623"}
+{"sender": "user2", "message": "actually, it's my hometown", "end": false, "timestamp": "2024-08-26T15:13:15.046737"}
+{"sender": "user2", "message": "it's so pretty", "end": false, "timestamp": "2024-08-26T15:13:20.491788"}
+{"sender": "user3", "message": "i'm looking forward to visiting beautiful city", "end": false, "timestamp": "2024-08-26T15:13:39.822232"}
+{"sender": "user3", "message": "bye", "end": false, "timestamp": "2024-08-26T15:13:41.251634"}
+{"sender": "user3", "message": "see ya", "end": false, "timestamp": "2024-08-26T15:13:43.207817"}
+{"sender": "user3", "message": "\nUser [user3] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T15:13:44.869722"}
+{"sender": "user2", "message": "\nUser [user2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T15:13:50.596852"}
