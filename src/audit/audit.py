@@ -6,7 +6,7 @@ import os
 
 # OFFSET_FILE = os.path.expanduser('~/teamproj/offset.txt')
 OFFSET_PATH = os.getenv('OFFSET_PATH')
-OFFSET_FILE = OFFSET_PATH/"offset.txt"
+OFFSET_FILE = f'{OFFSET_PATH}/offset.txt'
 
 spark = SparkSession.builder.appName("KafkaAudit").getOrCreate()
 
