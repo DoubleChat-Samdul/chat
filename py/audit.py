@@ -51,7 +51,8 @@ def fetch_data():
         StructField("sender", StringType(), True),
         StructField("message", StringType(), True),
         StructField("end", BooleanType(), True),
-        StructField("timestamp", StringType(), True)
+        # StructField("timestamp", StringType(), True)
+        StructField("timestamp", TimestampType(), True)
     ])
 
     if message_list:
