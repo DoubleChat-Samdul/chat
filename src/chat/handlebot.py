@@ -1,9 +1,12 @@
 import json
 import pandas as pd
+import os
 
 def call_bot(message, username, upperwin):
     # JSON 파일 읽기 및 DataFrame으로 변환
-    file_path = '/home/oddsummer/data/movdata/year=2021/movieList.json'  # JSON 파일 경로
+    home_dir = os.path.expanduser("~") #홈 디렉토리 경로를 반환
+    file_path = os.path.join(home_dir, f"data/movdata/year=2021/movieList.json")  
+    
     with open(file_path, 'r') as f:
         data = json.load(f)
 
