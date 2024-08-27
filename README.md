@@ -37,6 +37,30 @@ Type in 'exit' to also finish the chat.
 ### 2. movchatbot
 채팅에서 `@bot` 또는 `@봇` 키워드로 질문 프롬프트를 입력했을 때, 영화목록 데이터베이스에서 검색하여 질문에 대한 답을 돌려주는 챗봇 기능입니다.
 
+본 기능은 `BOT_JSON_PATH`라는 셸 환경변수의 위치로부터 영화 데이터를 가져오고 있습니다.
+
+따라서, 다음과 같이 사용중인 셸의 설정 파일 (`~/.bashrc`, `~/.zshrc`, ...)에 환경변수를 추가하면 됩니다.
+
+```bash
+$ tail -3 ~/.zshrc
+
+# movchatbot
+export BOT_JSON_PATH=<MY_JSON_PATH>
+```
+
+만약 영화 데이터베이스가 존재하지 않는 경우, 본 레포지토리의 `/data/movList.json`을 사용하셔도 됩니다.
+이 경우 환경변수는
+```bash
+
+$ tail -3 ~/.zshrc
+
+# movchatbot
+export BOT_JSON_PATH=<MY_REPOSITORY_PATH>/data
+```
+
+로 설정하면 됩니다.
+
+
 ![image](https://github.com/user-attachments/assets/d897bb0c-4306-42bf-ad7f-29957ef143c2) 
 
 채팅에서 `@bot` 혹은 `@봇` 키워드를 포함하여 메세지를 작성하면 봇이 질문으로 인식하여 채팅메세지로 답변합니다.   
@@ -62,13 +86,17 @@ Type in 'exit' to also finish the chat.
 
 따라서, 다음과 같이 사용중인 셸의 설정 파일 (`~/.bashrc`, `~/.zshrc`, ...)에 환경변수를 추가하면 됩니다.
 ```bash
-$ tail -3 ~/.zshrc
+$ tail -4 ~/.zshrc
 
-# AUDIT_PATH
-export AUDIT_PATH =<MY_PATH>
+export AUDIT_MODULE =<MY_MODULE_PATH>
+export AUDIT_PATH =<MY_AUDIT_PATH>
+export OFFSET_PATH =<MY_OFFSET_PATH>
 ```
 
-`<MY_PATH>`는 사용자가 직접 지정하면 되는 경로입니다. 실제로 로그 파일이 저장될 위치입니다.
+- `<MY_MODULE_PATH>`는 메시지 로그 데이터 수집을 위한 모듈 위치로, 해당 위치에 저장된 모듈을 직접 실행하거나, Airflow를 통해 한 시간마다 주기적으로 실행되도록 설정할 수 있습니다.
+- `<MY_AUDIT_PATH>`는 사용자가 직접 지정하면 되는 경로로, 실제로 로그 파일이 저장될 위치입니다.
+- `<MY_OFFSET_PATH>`는 사용자가 직접 지정하면 되는 경로로, 메시지 로그 데이터 수집을 위한 offset을 관리하는 offset.txt가 저장될 위치입니다. 
+
 
 해당 기능은 자동적으로 Kafka 서버의 채팅 로그를 가져와 지정된 경로에 저장하며, 여기에 포함된 데이터는 다음과 같습니다.
 - `sender`: 메시지의 전송자
@@ -81,19 +109,19 @@ export AUDIT_PATH =<MY_PATH>
 - `word count`: 해당 단어가 몇 번 사용되었는지에 대한 정보
 - `time count`: 해당 시,분에 몇 개의 채팅이 전송되었는지에 대한 정보
 
-### ◇ Audit module
-- `audit.py` DAG: 감사를 위한 데이터 수집 작업은 1시간 마다 스케줄링되어 이루어지며, 이 과정은 `Spark`를 활용하여 분산 처리함
-- `offset.txt`: 전송된 메시지의 누수를 방지하고, 데이터 추출의 효율성을 확보하기 위하여 Kafka UI를 통해 확인가능한 `offset` 정보를 저장하여 관리
-- `message_audit`: Kafka에서 가져온 데이터를 spark의 데이터 프레임 형식으로 변환한 후, 해당 경로에 parquet 형식으로 누적해서 저장
+### ◇ Audit module Quick Guide
+- `audit.py` DAG: 감사를 위한 데이터 수집 작업은 1시간 마다 스케줄링되어 이루어지며, 이 과정은 `Spark`를 활용하여 분산 처리됩니다.
+- `offset.txt`: 전송된 메시지의 누수를 방지하고, 데이터 추출의 효율성을 확보하기 위하여 Kafka UI를 통해 확인가능한 `offset` 정보를 저장하여 관리됩니다.
+- `message_audit`: Kafka에서 가져온 데이터를 spark의 데이터 프레임 형식으로 변환한 후, 해당 경로에 parquet 형식으로 누적해서 저장됩니다.
 
 
 ## ◆ Update Changelog
 - `v0.2.0`
 : python `curses` 라이브러리를 통해, 채팅방에 접속했을 경우 창을 위쪽의 upperwin, 아래쪽의 lowerwin으로 나눠 각각 입/출력을 담당하게 하는 채팅 기능을 완성하였습니다.
 - `v0.2.1`
-:
+: 메시지 감사 기능을 구현하기 위한 audit 모듈을 개발하여 src/audit 경로에 추가하였습니다.
 - `v0.2.2`
-: 
+: 로컬 환경에서 뿐만 아니라 모든 환경에서 작동할 수 있도록, 기존의 절대 경로를 수정하여 셸의 환경 변수를 활용하는 방식으로 수정하였습니다. 
 - `v0.3.0`
 : 
 : 또한, `utf-8` 인코딩/디코딩 과정에서 빈번하게 발생하는 한글/영문 입력의 `UnicodeError`를 캐치하는 에러 핸들링 구문을 추가했습니다.
