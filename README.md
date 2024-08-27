@@ -18,6 +18,13 @@ Input username:     <USERNAME>
 
 채팅에서 접속을 종료하고 싶으면 `exit`을 입력하면 되며, 이 경우 서버는 해당 사용자가 접속을 종료했음을 채팅방에 알리게 됩니다.
 
+예시:
+
+![스크린샷 2024-08-26 105436](https://github.com/user-attachments/assets/5a86319c-7eac-48cd-975a-8ac677b8fdbb)
+
+![스크린샷 2024-08-26 105436 - 복사본](https://github.com/user-attachments/assets/a47edae4-b1c5-4941-90fc-4490469a2ff1)
+
+
 ```
 YOU: exit
 ```
@@ -27,7 +34,6 @@ Type in 'exit' to also finish the chat.
 ```
 
 예시:
-![스크린샷 2024-08-26 105436](https://github.com/user-attachments/assets/4eee8002-5fd3-4168-91ec-26ae45c9d94a)
 
 본 채팅은 영어와 한국어 채팅을 지원합니다.
 
