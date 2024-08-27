@@ -1,5 +1,5 @@
 # DoucleChat
-## Introduction
+## ◆ Introduction
 팀프로젝트2를 위해 `DoubleChat-Samdul` 조가 개발한 Kafka 서버를 경유하는 채팅 어플리케이션입니다.
 
 ## Usage
@@ -53,7 +53,7 @@ Type in 'exit' to also finish the chat.
 
 
 
-## Additional Functionalities
+## ◆ Additional Functionalities
 
 ### Chat Auditor
 채팅 이용자 메시지 로그 데이터 수집을 통한 감사 기능입니다.
@@ -74,7 +74,7 @@ Type in 'exit' to also finish the chat.
 - `audit.py` DAG: 감사를 위한 데이터 수집 작업은 1시간 마다 스케줄링되어 이루어지며, 이 과정은 `Spark`를 활용하여 분산 처리함 
 
 
-## Update Changelog
+## ◆ Update Changelog
 - `v0.2.0`
 : python `curses` 라이브러리를 통해, 채팅방에 접속했을 경우 창을 위쪽의 upperwin, 아래쪽의 lowerwin으로 나눠 각각 입/출력을 담당하게 하는 채팅 기능을 완성하였습니다.
 - `v0.2.1` → `v0.2.2`
@@ -84,7 +84,7 @@ Type in 'exit' to also finish the chat.
 : 또한, `utf-8` 인코딩/디코딩 과정에서 빈번하게 발생하는 한글/영문 입력의 `UnicodeError`를 캐치하는 에러 핸들링 구문을 추가했습니다.
 
 
-## Mechanics
+## ◆ Mechanics
 
 초기 구현시에는 파이썬의 기본 `input()` 및 `print()` 함수, 그리고 `thread` 모듈을 통한 스레딩으로 채팅의 입/출력이 한 윈도우에서 동시에 이뤄지도록 채팅방을 구현했습니다. 그러나 실제로 입력을 받기 전까지 구문을 계속 열어 놓는  `input()` 함수의 특성으로 인해 입출력 병렬 운용이 구현되었어도 입력과 출력이 1:1 비율로 이뤄지지 않는다면 입력구문의 프롬프트가 출력 구문으로 계속 '밀리는'  시각적 혼선 문제가 있었습니다.
 
