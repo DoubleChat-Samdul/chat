@@ -26,8 +26,8 @@ def create_data(username, message, end):
 
 def pchat(chatroom, username, lowerwin, upperwin, lock):
     sender = KafkaProducer(
-        bootstrap_servers = ['localhost:9092'],
-        # bootstrap_servers = ['ec2-43-203-182-252.ap-northeast-2.compute.amazonaws.com:9092'],
+        # bootstrap_servers = ['localhost:9092'],
+        bootstrap_servers = ['ec2-43-203-210-250.ap-northeast-2.compute.amazonaws.com:9092'],
         value_serializer = lambda x: dumps(x).encode('utf-8'),
     )
 
@@ -70,8 +70,8 @@ def pchat(chatroom, username, lowerwin, upperwin, lock):
 def cchat(chatroom, username, lowerwin, upperwin, lock):
     receiver = KafkaConsumer(
         chatroom,
-        bootstrap_servers = ['localhost:9092'],
-        # bootstrap_servers = ['ec2-43-203-182-252.ap-northeast-2.compute.amazonaws.com:9092'],
+        # bootstrap_servers = ['localhost:9092'],
+        bootstrap_servers = ['ec2-43-203-210-250.ap-northeast-2.compute.amazonaws.com:9092'],
         enable_auto_commit = True,
         value_deserializer = lambda x: loads(x.decode('utf-8'))
     )
