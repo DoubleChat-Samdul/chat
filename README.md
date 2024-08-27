@@ -1,4 +1,4 @@
-# DoucleChat
+# DoubleChat
 ## ◆ Introduction
 팀프로젝트2를 위해 `DoubleChat-Samdul` 조가 개발한 Kafka 서버를 경유하는 채팅 어플리케이션입니다.
 
