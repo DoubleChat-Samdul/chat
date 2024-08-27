@@ -3,6 +3,8 @@
 팀프로젝트2를 위해 `DoubleChat-Samdul` 조가 개발한 Kafka 서버를 경유하는 채팅 어플리케이션입니다.
 
 ## ◆ Usage
+※ 본 항목에서 `<MY_REPOSITORY_PATH>`는 해당 레포지토리를 클론한 경로를 뜻합니다.
+
 ### 1. Chat Basics
 ```bash
 $ python <REPOSITORY_PATH>/src/chat/chat2.py
@@ -51,14 +53,30 @@ Type in 'exit' to also finish the chat.
 ![image](https://github.com/user-attachments/assets/592c066d-5db8-4670-a668-29be32c29e70)  
 
 
-
-## ◆ Additional Functionalities
-
-### 1. Chat Auditor
+### 3. Chat Auditor
 채팅 이용자 메시지 로그 데이터 수집을 통한 감사 기능입니다.
+본 기능은 [DoubleChat-Samdul/Airflow](https://github.com/DoubleChat-Samdul/airflow/tree/0.2.0/audit) 레포지토리의 기능과 연동되는 구조이므로, 사용을 위해 해당 모듈도 필요합니다.
+해당 레포지토리의 README 또한 참조해 주시기 바랍니다.
 
-### ◇ Data
-수집하고자 하는 데이터는 메시지 전송자 `sender`, 전송되는 메시지 `message`, 채팅 종료 여부를 표시하는 `end`, 전송 시간 `timestamp`이며, 해당 데이터를 활용하여 얻을 수 있는 통계 정보는 다음과 같은 것들이 있습니다. 
+본 기능은 `AUDIT_PATH`라는 셸 환경변수에 로그 데이터를 수집할 경로를 저장하고 있습니다.
+
+따라서, 다음과 같이 사용중인 셸의 설정 파일 (`~/.bashrc`, `~/.zshrc`, ...)에 환경변수를 추가하면 됩니다.
+```bash
+$ tail -3 ~/.zshrc
+
+# AUDIT_PATH
+export AUDIT_PATH =<MY_PATH>
+```
+
+`<MY_PATH>`는 사용자가 직접 지정하면 되는 경로입니다. 실제로 로그 파일이 저장될 위치입니다.
+
+해당 기능은 자동적으로 Kafka 서버의 채팅 로그를 가져와 지정된 경로에 저장하며, 여기에 포함된 데이터는 다음과 같습니다.
+- `sender`: 메시지의 전송자
+- `message`: 전송된 메시지
+- `end`: 해당 메시지가 채팅을 종료하는 커맨드였는지의 여부
+- `timestamp`: 해당 메시지가 전송된 시/분 시각 정보
+
+해당 데이터를 활용하여 얻을 수 있는 통계 정보는 다음과 같은 것들이 있습니다. 
 - `user count`: 해당 전송자가 몇 개의 채팅을 전송하였는지에 대한 정보
 - `word count`: 해당 단어가 몇 번 사용되었는지에 대한 정보
 - `time count`: 해당 시,분에 몇 개의 채팅이 전송되었는지에 대한 정보
