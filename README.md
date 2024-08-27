@@ -62,13 +62,17 @@ Type in 'exit' to also finish the chat.
 
 따라서, 다음과 같이 사용중인 셸의 설정 파일 (`~/.bashrc`, `~/.zshrc`, ...)에 환경변수를 추가하면 됩니다.
 ```bash
-$ tail -3 ~/.zshrc
+$ tail -4 ~/.zshrc
 
-# AUDIT_PATH
-export AUDIT_PATH =<MY_PATH>
+export AUDIT_MODULE =<MY_MODULE_PATH>
+export AUDIT_PATH =<MY_AUDIT_PATH>
+export OFFSET_PATH =<MY_OFFSET_PATH>
 ```
 
-`<MY_PATH>`는 사용자가 직접 지정하면 되는 경로입니다. 실제로 로그 파일이 저장될 위치입니다.
+`<MY_MODULE_PATH>`는 메시지 로그 데이터 수집을 위한 모듈 위치로, 해당 위치에 저장된 모듈을 직접 실행하거나, Airflow를 통해 한 시간마다 주기적으로 실행되도록 설정할 수 있습니다.
+`<MY_AUDIT_PATH>`는 사용자가 직접 지정하면 되는 경로로, 실제로 로그 파일이 저장될 위치입니다.
+`<MY_OFFSET_PATH>`는 사용자가 직접 지정하면 되는 경로로, 메시지 로그 데이터 수집을 위한 offset을 관리하는 offset.txt가 저장될 위치입니다. 
+
 
 해당 기능은 자동적으로 Kafka 서버의 채팅 로그를 가져와 지정된 경로에 저장하며, 여기에 포함된 데이터는 다음과 같습니다.
 - `sender`: 메시지의 전송자
