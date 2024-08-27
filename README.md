@@ -2,7 +2,7 @@
 ## ◆ Introduction
 팀프로젝트2를 위해 `DoubleChat-Samdul` 조가 개발한 Kafka 서버를 경유하는 채팅 어플리케이션입니다.
 
-## Usage
+## ◆ Usage
 ### 1. Chat Basics
 ```bash
 $ python <REPOSITORY_PATH>/src/chat/chat2.py
@@ -32,7 +32,6 @@ Type in 'exit' to also finish the chat.
 
 ![스크린샷 2024-08-26 105436 - 복사본](https://github.com/user-attachments/assets/46a5059f-7149-416a-b891-1eccf1ead505) ![스크린샷 2024-08-26 105436](https://github.com/user-attachments/assets/5a86319c-7eac-48cd-975a-8ac677b8fdbb)
 
-
 ### 2. movchatbot
 채팅에서 `@bot` 또는 `@봇` 키워드로 질문 프롬프트를 입력했을 때, 영화목록 데이터베이스에서 검색하여 질문에 대한 답을 돌려주는 챗봇 기능입니다.
 
@@ -55,23 +54,19 @@ Type in 'exit' to also finish the chat.
 
 ## ◆ Additional Functionalities
 
-### Chat Auditor
+### 1. Chat Auditor
 채팅 이용자 메시지 로그 데이터 수집을 통한 감사 기능입니다.
 
-#### Data
-수집하고자 하는 데이터는 메시지 전송자 `sender`, 전송되는 메시지 `message`, 채팅 종료 여부를 표시하는 `end`, 전송 시간 `timestamp`이며, 데이터를 활용하여 얻고자 하는 통계는 아래와 같다. 
-- `user count`: 해당 전송자가 몇 개의 채팅을 전송하였는지 확인 가능 
-- `word count`: 해당 단어가 몇 번 사용되었는지 확인 가능
-- `time count`: 해당 시,분에 몇 개의 채팅이 전송되었는지 확인 가능
+### ◇ Data
+수집하고자 하는 데이터는 메시지 전송자 `sender`, 전송되는 메시지 `message`, 채팅 종료 여부를 표시하는 `end`, 전송 시간 `timestamp`이며, 해당 데이터를 활용하여 얻을 수 있는 통계 정보는 다음과 같은 것들이 있습니다. 
+- `user count`: 해당 전송자가 몇 개의 채팅을 전송하였는지에 대한 정보
+- `word count`: 해당 단어가 몇 번 사용되었는지에 대한 정보
+- `time count`: 해당 시,분에 몇 개의 채팅이 전송되었는지에 대한 정보
 
-
-#### Audit module
+### ◇ Audit module
+- `audit.py` DAG: 감사를 위한 데이터 수집 작업은 1시간 마다 스케줄링되어 이루어지며, 이 과정은 `Spark`를 활용하여 분산 처리함
 - `offset.txt`: 전송된 메시지의 누수를 방지하고, 데이터 추출의 효율성을 확보하기 위하여 Kafka UI를 통해 확인가능한 `offset` 정보를 저장하여 관리
 - `message_audit`: Kafka에서 가져온 데이터를 spark의 데이터 프레임 형식으로 변환한 후, 해당 경로에 parquet 형식으로 누적해서 저장
-
-
-#### Airflow
-- `audit.py` DAG: 감사를 위한 데이터 수집 작업은 1시간 마다 스케줄링되어 이루어지며, 이 과정은 `Spark`를 활용하여 분산 처리함 
 
 
 ## ◆ Update Changelog
