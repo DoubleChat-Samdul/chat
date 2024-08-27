@@ -13,3 +13,110 @@
 {"sender": "user2", "message": "bye", "end": false, "timestamp": "2024-08-26T11:27:03.836618"}
 {"sender": "user2", "message": "\nUser [user2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T11:27:05.278080"}
 {"sender": "user1", "message": "\nUser [user1] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T11:27:07.839530"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T12:05:29.548149"}
+{"sender": "[INFO]", "message": "User [1] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T12:05:37.745769"}
+{"sender": "2", "message": "hi", "end": false, "timestamp": "2024-08-26T12:05:39.848062"}
+{"sender": "1", "message": "hello", "end": false, "timestamp": "2024-08-26T12:05:41.910633"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T12:06:06.170672"}
+{"sender": "2", "message": "bot ", "end": false, "timestamp": "2024-08-26T12:06:07.190643"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T12:11:05.736869"}
+{"sender": "2", "message": "chat", "end": false, "timestamp": "2024-08-26T12:11:06.638230"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T12:11:13.591006"}
+{"sender": "2", "message": "\nUser [2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T12:13:53.861137"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T12:13:59.076095"}
+{"sender": "2", "message": "chi", "end": false, "timestamp": "2024-08-26T15:22:39.290332"}
+{"sender": "2", "message": "l", "end": false, "timestamp": "2024-08-26T15:22:40.887405"}
+{"sender": "2", "message": "ls", "end": false, "timestamp": "2024-08-26T15:22:41.745845"}
+{"sender": "2", "message": "\nUser [2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T15:22:44.179557"}
+{"sender": "2", "message": "ext", "end": false, "timestamp": "2024-08-26T15:22:46.168966"}
+{"sender": "2", "message": "\nUser [2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T15:22:47.784232"}
+{"sender": "[INFO]", "message": "User [1] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:22:54.855440"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:22:57.448301"}
+{"sender": "2", "message": "hello", "end": false, "timestamp": "2024-08-26T15:22:58.869732"}
+{"sender": "1", "message": "what's up!!", "end": false, "timestamp": "2024-08-26T15:23:01.929669"}
+{"sender": "1", "message": "@ bot", "end": false, "timestamp": "2024-08-26T15:23:04.666286"}
+{"sender": "2", "message": "a", "end": false, "timestamp": "2024-08-26T15:28:57.475437"}
+{"sender": "2", "message": "hi", "end": false, "timestamp": "2024-08-26T15:28:58.888717"}
+{"sender": "2", "message": "ls", "end": false, "timestamp": "2024-08-26T15:28:59.524016"}
+{"sender": "2", "message": "\nUser [2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T15:29:00.714663"}
+{"sender": "[INFO]", "message": "User [1] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:29:05.784033"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:29:10.545897"}
+{"sender": "[INFO]", "message": "User [w] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:31:03.793599"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:32:58.219585"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:36:03.998030"}
+{"sender": "z", "message": "hi", "end": false, "timestamp": "2024-08-26T15:36:04.721204"}
+{"sender": "z", "message": "ls", "end": false, "timestamp": "2024-08-26T15:36:05.657284"}
+{"sender": "[INFO]", "message": "User [a] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:36:23.631586"}
+{"sender": "a", "message": "hi", "end": false, "timestamp": "2024-08-26T15:36:24.352124"}
+{"sender": "a", "message": "what's up", "end": false, "timestamp": "2024-08-26T15:36:27.505967"}
+{"sender": "z", "message": "tired", "end": false, "timestamp": "2024-08-26T15:36:31.259314"}
+{"sender": "z", "message": "@ bot jkl|asj", "end": false, "timestamp": "2024-08-26T15:36:41.974545"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:38:37.376081"}
+{"sender": "z", "message": "hi", "end": false, "timestamp": "2024-08-26T15:38:38.978646"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:38:48.860142"}
+{"sender": "z", "message": "w", "end": false, "timestamp": "2024-08-26T15:42:11.804770"}
+{"sender": "z", "message": "\u0003\u0003", "end": false, "timestamp": "2024-08-26T15:43:40.604049"}
+{"sender": "z", "message": "\nUser [z] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T15:43:42.247952"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:43:47.385530"}
+{"sender": "z", "message": "as", "end": false, "timestamp": "2024-08-26T15:44:08.237093"}
+{"sender": "z", "message": "hi", "end": false, "timestamp": "2024-08-26T15:44:09.442016"}
+{"sender": "z", "message": "hi", "end": false, "timestamp": "2024-08-26T15:44:11.392488"}
+{"sender": "z", "message": "ls", "end": false, "timestamp": "2024-08-26T15:44:12.534383"}
+{"sender": "z", "message": "\u0003", "end": false, "timestamp": "2024-08-26T15:44:13.651337"}
+{"sender": "z", "message": "what", "end": false, "timestamp": "2024-08-26T15:44:15.363884"}
+{"sender": "z", "message": "\nUser [z] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T15:44:17.582245"}
+{"sender": "z", "message": "\nUser [z] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T15:45:07.217821"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:45:10.837877"}
+{"sender": "z", "message": "\nUser [z] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T15:57:45.182682"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:57:49.734046"}
+{"sender": "z", "message": "hci", "end": false, "timestamp": "2024-08-26T15:57:51.010488"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:58:50.685943"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T15:59:30.410965"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:00:40.214950"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:01:22.236404"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:02:23.413577"}
+{"sender": "z", "message": "vim", "end": false, "timestamp": "2024-08-26T16:05:51.213340"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:09:44.975772"}
+{"sender": "2", "message": "\nUser [2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T16:10:28.783543"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:10:32.715311"}
+{"sender": "2", "message": "hi", "end": false, "timestamp": "2024-08-26T16:10:53.017297"}
+{"sender": "2", "message": "\nUser [2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T16:12:47.132873"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:23:46.297113"}
+{"sender": "2", "message": "\nUser [2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T16:24:36.437421"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:24:40.527748"}
+{"sender": "[INFO]", "message": "User [r] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:25:39.989851"}
+{"sender": "r", "message": "xit", "end": false, "timestamp": "2024-08-26T16:27:47.400546"}
+{"sender": "r", "message": "\nUser [r] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T16:27:49.286113"}
+{"sender": "[INFO]", "message": "User [r] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:27:54.232531"}
+{"sender": "r", "message": "\nUser [r] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T16:29:10.046004"}
+{"sender": "[INFO]", "message": "User [r] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:29:14.736537"}
+{"sender": "r", "message": "hello", "end": false, "timestamp": "2024-08-26T16:29:46.538137"}
+{"sender": "r", "message": "hi", "end": false, "timestamp": "2024-08-26T16:29:48.153929"}
+{"sender": "r", "message": "\nUser [r] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T16:31:17.011410"}
+{"sender": "[INFO]", "message": "User [r] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:31:20.251270"}
+{"sender": "r", "message": "\ud30c\ubb18|\uac10\ub3c5", "end": false, "timestamp": "2024-08-26T16:31:22.568193"}
+{"sender": "r", "message": "\ud55c\uad6d\uc5b4", "end": false, "timestamp": "2024-08-26T16:35:18.907454"}
+{"sender": "r", "message": "\uc785\ub825\ud558\uba74", "end": false, "timestamp": "2024-08-26T16:35:20.134523"}
+{"sender": "r", "message": "\uc5d0\ub7ec \ub728\ub098\uc694", "end": false, "timestamp": "2024-08-26T16:35:22.047035"}
+{"sender": "r", "message": "@\ubd07 \ud30c\ubb18|\uac10\ub3c5", "end": false, "timestamp": "2024-08-26T16:37:15.619002"}
+{"sender": "r", "message": "@\ubd07 \ub4c4|\uac10\ub3c5", "end": false, "timestamp": "2024-08-26T16:37:19.463892"}
+{"sender": "r", "message": "\nUser [r] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T16:38:05.916833"}
+{"sender": "[INFO]", "message": "User [r] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:38:09.650694"}
+{"sender": "[INFO]", "message": "User [r] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:39:10.658917"}
+{"sender": "[INFO]", "message": "User [r] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:40:56.967341"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T16:45:27.309229"}
+{"sender": "2", "message": "\uc548\ub1fd", "end": false, "timestamp": "2024-08-26T16:45:54.884951"}
+{"sender": "2", "message": "\ubc30\uace0\ud30c", "end": false, "timestamp": "2024-08-26T16:45:55.840825"}
+{"sender": "2", "message": "\uc7a0\uc640", "end": false, "timestamp": "2024-08-26T16:45:56.875777"}
+{"sender": "2", "message": "\nUser [2] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T16:47:11.933899"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T17:18:46.277176"}
+{"sender": "[INFO]", "message": "User [2] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T17:19:14.033151"}
+{"sender": "[INFO]", "message": "User [z] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T17:29:24.019831"}
+{"sender": "z", "message": "@bout", "end": false, "timestamp": "2024-08-26T17:29:25.698033"}
+{"sender": "z", "message": "\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~", "end": false, "timestamp": "2024-08-26T17:36:43.370482"}
+{"sender": "z", "message": "ajsep", "end": false, "timestamp": "2024-08-26T17:36:45.846315"}
+{"sender": "z", "message": "\uba3c\ub370", "end": false, "timestamp": "2024-08-26T17:36:46.454070"}
+{"sender": "z", "message": "..", "end": false, "timestamp": "2024-08-26T17:36:47.652629"}
+{"sender": "z", "message": "\nUser [z] has exited the chatroom.", "end": true, "timestamp": "2024-08-26T17:36:53.209244"}
+{"sender": "[INFO]", "message": "User [a] has entered the chat!\n", "end": false, "timestamp": "2024-08-26T17:37:05.060175"}
+{"sender": "a", "message": "hi", "end": false, "timestamp": "2024-08-26T17:37:05.963538"}

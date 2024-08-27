@@ -3,13 +3,15 @@
 # src/chat.py
 from kafka import KafkaProducer, KafkaConsumer
 from json import loads, dumps
+from handlebot import call_bot
 import threading
 import curses
 import json
+import pandas as pd
 from datetime import datetime
 
 # JSON 파일에 저장하기 위한 경로
-output_file = '/home/kyuseok00/teamproj/chat/data/messages.json'
+output_file = '/home/oddsummer/teamproj/chat/data/messages.json'
 
 def resize_win(stdscr, lowerwin_height=3):
     height, width = stdscr.getmaxyx()
@@ -36,27 +38,32 @@ def pchat(chatroom, username, lowerwin, upperwin, lock):
         bootstrap_servers=['localhost:9092'],
         value_serializer=lambda x: dumps(x).encode('utf-8'),
     )
+    
+    data = create_data("[INFO]", f"User [{username}] has entered the chat!\n", False)
+    end = False
+    sender.send(chatroom, value=data)
+    sender.flush()
 
-    try:
-        data = create_data("[INFO]", f"User [{username}] has entered the chat!\n", False)
-        end = False
-        sender.send(chatroom, value=data)
-        sender.flush()
+    # 메시지를 보낼 때마다 JSON 파일에 저장
+    with open(output_file, 'a') as f:
+        json.dump(data, f)
+        f.write('\n')
 
-        # 메시지를 보낼 때마다 JSON 파일에 저장
-        with open(output_file, 'a') as f:
-            json.dump(data, f)
-            f.write('\n')
-
-        while True:
+    while True:
+        try:
             with lock:
                 lowerwin.clear()
                 lowerwin.addstr(0, 0, f"YOU: ")
                 lowerwin.refresh()
-
             message = lowerwin.getstr(0, len(f"YOU: "), 70).decode('utf-8')
 
             if message == "":
+                continue
+            
+            if call_bot(message, username, upperwin):
+            #    with lock:
+            #        lowerwin.clear()
+            #        lowerwin.refresh()
                 continue
 
             if message == 'exit':
@@ -75,12 +82,19 @@ def pchat(chatroom, username, lowerwin, upperwin, lock):
             if end:
                 return
 
-    except KeyboardInterrupt:
-        upperwin.addstr("[INFO] Encountered keyboard interrupt. Finishing chat...")
-        upperwin.refresh()
-        return
+        except UnicodeDecodeError:
+            with lock:
+                lowerwin.addstr(f"[ERROR] Error decoding input. Please try again.\n")
+                lowerwin.addstr(f"Press any key to continue...")
+                lowerwin.getch()
+                continue
 
-# RECEIVER
+        except KeyboardInterrupt:
+            upperwin.addstr("[INFO] Encountered keyboard interrupt. Finishing chat...")
+            upperwin.refresh()
+            return
+
+
 def cchat(chatroom, username, lowerwin, upperwin, lock):
     receiver = KafkaConsumer(
         chatroom,
