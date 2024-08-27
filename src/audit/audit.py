@@ -1,6 +1,7 @@
 from kafka import KafkaConsumer, TopicPartition
 from pyspark.sql import SparkSession
-from pyspark.sql.types import StructType, StructField, StringType, BooleanType, TimestampType
+from pyspark.sql.types import StructType, StructField, StringType, BooleanType
+from pyspark.sql.functions import col, regexp_replace, to_timestamp
 from json import loads
 import os
 
