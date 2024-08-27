@@ -77,7 +77,7 @@ Type in 'exit' to also finish the chat.
 - `v0.3.0`
 : 
 : 또한, `utf-8` 인코딩/디코딩 과정에서 빈번하게 발생하는 한글/영문 입력의 `UnicodeError`를 캐치하는 에러 핸들링 구문을 추가했습니다.
-
+ 
 
 ## ◆ Mechanics
 
@@ -85,5 +85,4 @@ Type in 'exit' to also finish the chat.
 
 이를 해결하기 위해 실제 다양한 채팅 어플리케이션과 같이 입력 윈도우를 출력 윈도우와 분리해 개발하자는 의견이 나와, 조사 후 파이썬 기본 라이브러리의 `curses` 모듈을 통해 CLI에서의 창 분리를 구현하기로 했습니다.
 
-본 어플리케이션은 따라서 `curses` 모듈을 통해 `upperwin`과 `lowerwin`을 분리해 전자를 출력 윈도우, 후자를 입력 윈도우로 사용하도록 제작되었습니다.
-
+본 어플리케이션은 따라서 `curses` 모듈을 통해 `upperwin`과 `lowerwin`을 분리해 전자가 출력을, 후자가 입력을 담당하도록 제작되었습니다.
