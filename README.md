@@ -90,7 +90,9 @@ export AUDIT_PATH =<MY_PATH>
 ## ◆ Update Changelog
 - `v0.2.0`
 : python `curses` 라이브러리를 통해, 채팅방에 접속했을 경우 창을 위쪽의 upperwin, 아래쪽의 lowerwin으로 나눠 각각 입/출력을 담당하게 하는 채팅 기능을 완성하였습니다.
-- `v0.2.1` → `v0.2.2`
+- `v0.2.1`
+:
+- `v0.2.2`
 : 
 - `v0.3.0`
 : 
