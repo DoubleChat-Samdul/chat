@@ -1,10 +1,14 @@
+import os
 import json
 import pandas as pd
 
 def call_bot(message, username, upperwin):
+    
     # JSON 파일 읽기 및 DataFrame으로 변환
-    file_path = '/home/oddsummer/data/movdata/year=2021/movieList.json'  # JSON 파일 경로
-    with open(file_path, 'r') as f:
+    home_dir = os.path.expanduser("~") #홈 디렉토리 경로를 반환
+    path = os.path.join(home_dir, f"data/movdata/year=2021/movieList.json") 
+    
+    with open(path, 'r') as f:
         data = json.load(f)
 
     df = pd.json_normalize(data)  # JSON 구조에 따라 데이터를 정규화하여 DataFrame으로 변환
