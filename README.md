@@ -20,7 +20,7 @@ Input username:     <USERNAME>
 
 예시:
 
-![스크린샷 2024-08-26 105436](https://github.com/user-attachments/assets/5a86319c-7eac-48cd-975a-8ac677b8fdbb) ![스크린샷 2024-08-26 105436 - 복사본](https://github.com/user-attachments/assets/46a5059f-7149-416a-b891-1eccf1ead505)
+![스크린샷 2024-08-26 105436 - 복사본](https://github.com/user-attachments/assets/46a5059f-7149-416a-b891-1eccf1ead505) ![스크린샷 2024-08-26 105436](https://github.com/user-attachments/assets/5a86319c-7eac-48cd-975a-8ac677b8fdbb)
 
 
 ```
