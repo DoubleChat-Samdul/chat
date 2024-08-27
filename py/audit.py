@@ -4,7 +4,7 @@ from pyspark.sql.types import StructType, StructField, StringType, BooleanType, 
 from json import loads
 import os
 
-OFFSET_FILE = '/home/kyuseok00/teamproj/chat/offset.txt'
+OFFSET_FILE = os.path.expanduser('~/teamproj/offset.txt')
 
 spark = SparkSession.builder.appName("KafkaAudit").getOrCreate()
 
@@ -19,7 +19,7 @@ def read_offset():
     return None
 
 def fetch_data():
-    output_path = '/home/kyuseok00/teamproj/chat/data/messages_audit'
+    output_path = os.path.expanduser('~/teamproj/data/messages_audit')
     
     saved_offset = read_offset()
 
