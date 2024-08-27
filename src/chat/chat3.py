@@ -10,9 +10,6 @@ import json
 import pandas as pd
 from datetime import datetime
 
-# JSON 파일에 저장하기 위한 경로
-output_file = '/home/oddsummer/teamproj/chat/data/messages.json'
-
 def resize_win(stdscr, lowerwin_height=3):
     height, width = stdscr.getmaxyx()
     lowerwin_height = 3
@@ -35,7 +32,8 @@ def create_data(username, message, end):
 # SENDER
 def pchat(chatroom, username, lowerwin, upperwin, lock):
     sender = KafkaProducer(
-        bootstrap_servers=['localhost:9092'],
+        #bootstrap_servers=['localhost:9092'],
+        bootstrap_servers=['ec2-43-203-210-250.ap-northeast-2.compute.amazonaws.com:9092'],
         value_serializer=lambda x: dumps(x).encode('utf-8'),
     )
     
@@ -43,11 +41,6 @@ def pchat(chatroom, username, lowerwin, upperwin, lock):
     end = False
     sender.send(chatroom, value=data)
     sender.flush()
-
-    # 메시지를 보낼 때마다 JSON 파일에 저장
-    with open(output_file, 'a') as f:
-        json.dump(data, f)
-        f.write('\n')
 
     while True:
         try:
@@ -74,11 +67,6 @@ def pchat(chatroom, username, lowerwin, upperwin, lock):
             sender.send(chatroom, value=data)
             sender.flush()
 
-            # 메시지를 보낼 때마다 JSON 파일에 저장
-            with open(output_file, 'a') as f:
-                json.dump(data, f)
-                f.write('\n')
-
             if end:
                 return
 
@@ -98,7 +86,8 @@ def pchat(chatroom, username, lowerwin, upperwin, lock):
 def cchat(chatroom, username, lowerwin, upperwin, lock):
     receiver = KafkaConsumer(
         chatroom,
-        bootstrap_servers=['localhost:9092'],
+        bootstrap_servers=['ec2-43-203-210-250.ap-northeast-2.compute.amazonaws.com:9092'],
+        #bootstrap_servers=['localhost:9092'],
         enable_auto_commit=True,
         value_deserializer=lambda x: loads(x.decode('utf-8'))
     )
