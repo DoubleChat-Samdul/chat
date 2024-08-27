@@ -7,7 +7,7 @@
 
 ### 1. Chat Basics
 ```bash
-$ python <REPOSITORY_PATH>/src/chat/chat2.py
+$ python <MY_REPOSITORY_PATH>/src/chat/chat2.py
 ```
 ```
 Input chatroom name:<CHATROOM>
