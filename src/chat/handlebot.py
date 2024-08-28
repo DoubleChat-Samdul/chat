@@ -3,12 +3,10 @@ import pandas as pd
 import os
 
 def call_bot(message, username, upperwin):
+    
     # JSON 파일 읽기 및 DataFrame으로 변환
-#    home_dir = os.path.expanduser("~") #홈 디렉토리 경로를 반환
-#    file_path = os.path.join(home_dir, f"data/movdata/year=2021/movieList.json")  
-
-    file_path = os.getenv('BOT_JSON_PATH') + '/movieList.json'
-       
+    
+    file_path = os.getenv('BOT_JSON_PATH') + '/flatmovieList.json'
     with open(file_path, 'r') as f:
         data = json.load(f)
 
@@ -30,9 +28,9 @@ def call_bot(message, username, upperwin):
 
                 # 영화이름과 키워드에 따라 데이터 검색
                 if keyword2 == '감독':
-                    result = df[df['movieNm'] == movname]['directors'].explode().dropna()
+                    result = df[df['movieNm'] == movname]['directors']
                     if not result.empty:
-                        directors = ", ".join(result.apply(lambda x: x['peopleNm']))
+                        directors = ", ".join(result.dropna().unique())
                         result_message = f"{movname}를 만든 감독의 이름은 {directors} 입니다."
                     else:
                         result_message = f"{movname}에 대한 감독 정보를 찾을 수 없습니다."
@@ -40,14 +38,16 @@ def call_bot(message, username, upperwin):
                 elif keyword2 == '장르':
                     result = df[df['movieNm'] == movname]['genreAlt']
                     if not result.empty:
-                        result_message = f"{movname}의 장르는 {result.iloc[0]} 입니다."
+                        genres = ", ".join(result.dropna().unique())
+                        result_message = f"{movname}의 장르는 {genres} 입니다."
                     else:
                         result_message = f"{movname}에 대한 장르 정보를 찾을 수 없습니다."
 
                 elif keyword2 == '제작년도':
                     result = df[df['movieNm'] == movname]['prdtYear']
                     if not result.empty:
-                        result_message = f"{movname}의 제작년도는 {result.iloc[0]} 입니다."
+                        years = ", ".join(result.dropna().unique())
+                        result_message = f"{movname}의 제작년도는 {years} 입니다."
                     else:
                         result_message = f"{movname}에 대한 제작년도 정보를 찾을 수 없습니다."
 
