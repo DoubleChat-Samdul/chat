@@ -23,7 +23,7 @@ def read_offset():
 
 def fetch_data():
     AUDIT_PATH = os.getenv('AUDIT_PATH')
-    output_path = f'{AUDIT_PATH}/message_audit'
+    output_path = f'{AUDIT_PATH}/messages_audit'
     saved_offset = read_offset()
 
     consumer = KafkaConsumer(
