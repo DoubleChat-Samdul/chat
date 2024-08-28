@@ -94,7 +94,7 @@ export OFFSET_PATH =<MY_OFFSET_PATH>
 ```
 
 - `<MY_MODULE_PATH>`는 메시지 로그 데이터 수집을 위한 모듈 위치로, 해당 위치에 저장된 모듈을 직접 실행하거나, Airflow를 통해 한 시간마다 주기적으로 실행되도록 설정할 수 있습니다.
-- `<MY_AUDIT_PATH>`는 사용자가 직접 지정하면 되는 경로로, 실제로 로그 파일이 저장될 위치입니다.
+- `<MY_AUDIT_PATH>`는 사용자가 직접 지정하면 되는 경로입니다. 해당 위치의 `messages_audit`와 `message_processed` 디렉토리 내에 각각 최초 메시지 로그 데이터와 전처리된 메시지 로그 데이터가 저장됩니다. 
 - `<MY_OFFSET_PATH>`는 사용자가 직접 지정하면 되는 경로로, 메시지 로그 데이터 수집을 위한 offset을 관리하는 offset.txt가 저장될 위치입니다. 
 
 
