@@ -57,15 +57,9 @@ def fetch_data():
         StructField("end", BooleanType(), True),
         StructField("timestamp", StringType(), True)
     ])
-
+    
     if message_list:
         df = spark.createDataFrame(message_list, schema)
-        
-        df = df.filter(col("sender") != "[INFO]")
-        df = df.filter(col("end") != True)  
-        df = df.withColumn("message", regexp_replace(col("message"), r"\n", " "))
-        df = df.withColumn("timestamp", to_timestamp("timestamp", "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"))
-
         df.write.mode("append").parquet(output_path)
 
     consumer.close()
