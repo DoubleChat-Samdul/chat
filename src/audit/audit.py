@@ -64,8 +64,7 @@ def fetch_data():
         df = df.filter(col("sender") != "[INFO]")
         df = df.filter(col("end") != True)  
         df = df.withColumn("message", regexp_replace(col("message"), r"\n", " "))
-        df = df.withColumn("time", to_timestamp("timestamp", "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"))
-        df = df.drop('end', 'timestamp')
+        df = df.withColumn("timestamp", to_timestamp("timestamp", "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"))
 
         df.write.mode("append").parquet(output_path)
 
