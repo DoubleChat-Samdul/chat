@@ -79,7 +79,12 @@ export BOT_JSON_PATH=<MY_REPOSITORY_PATH>/data
 
 ### 3. Chat Auditor
 채팅 이용자 메시지 로그 데이터 수집을 통한 감사 기능입니다.
-본 기능은 [DoubleChat-Samdul/Airflow](https://github.com/DoubleChat-Samdul/airflow/tree/0.2.0/audit) 레포지토리의 기능과 연동되는 구조이므로, 사용을 위해 해당 모듈도 필요합니다.
+
+아래 URL 접속을 통하여 채팅 내용을 감사할 수 있습니다.
+
+- http://localhost:9999/#/notebook/2K8PP6PZ2 
+
+본 기능은 [[DoubleChat-Samdul/dags](https://github.com/DoubleChat-Samdul/dags)] 레포지토리의 기능과 연동되는 구조이므로, 사용을 위해 해당 모듈도 필요합니다.
 해당 레포지토리의 README 또한 참조해 주시기 바랍니다.
 
 본 기능은 `AUDIT_PATH`라는 셸 환경변수에 로그 데이터를 수집할 경로를 저장하고 있습니다.
