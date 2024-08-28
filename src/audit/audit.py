@@ -1,7 +1,7 @@
 from kafka import KafkaConsumer, TopicPartition
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, BooleanType
-from pyspark.sql.functions import col, regexp_replace, to_timestamp
+from pyspark.sql.functions import col, regexp_replace, to_timestamp, date_format
 from json import loads
 import os
 
@@ -22,9 +22,8 @@ def read_offset():
     return None
 
 def fetch_data():
-    # output_path = os.path.expanduser('~/teamproj/data/messages_audit')
-    output_path = os.getenv('AUDIT_PATH')
-    
+    AUDIT_PATH = os.getenv('AUDIT_PATH')
+    output_path = f'{AUDIT_PATH}/message_audit'
     saved_offset = read_offset()
 
     consumer = KafkaConsumer(
