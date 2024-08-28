@@ -60,8 +60,7 @@ export BOT_JSON_PATH=<MY_REPOSITORY_PATH>/data
 
 로 설정하면 됩니다.
 
-
-![image](https://github.com/user-attachments/assets/167e209b-aacc-4903-90b0-613fbcc7b6e8)  
+![image](https://github.com/user-attachments/assets/e2c8f7ff-daff-43c6-8227-d2b6ec838a54)  
 
 
 채팅에서 `@bot` 혹은 `@봇` 키워드를 포함하여 메세지를 작성하면 봇이 질문으로 인식하여 채팅메세지로 답변합니다.   
